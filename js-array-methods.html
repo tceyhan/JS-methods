@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-methods</title>
+</head>
+<body>
+    <script>
+//Array methods//
+
+// concat methodu
+//array içerisindeki elemanları birleştirir.
+
+var array1 = ["tarık","ceyhan","1984"];
+var array2 = ["Full","Stack","Developer"];
+var sonuc = array1.concat(array2);
+console.log(sonuc); // ["tarık", "ceyhan", "1984", "Full", "Stack", "Developer"]
+
+
+
+//sort() methodu
+//Array içerisindeki değişkenleri alfabetik olarak sıralar.
+//Varsayılan olarak, sort() işlevi değerleri dizeler olarak sıralar. Sayılar dizge olarak sıralanırsa, '25', '100'den büyüktür, çünkü '2', '1'den büyüktür. Bu nedenle, sort() yöntemi, sayıları sıralarken yanlış sonuç üretecektir.
+
+
+var arr = ["apple","cherry","banana"];
+var sonuc = arr.sort();
+console.log(sonuc); // ["apple", "banana", "cherry"]
+
+var num = ["23","198","34","3","9"];
+console.log(num.sort()); 
+
+// push() methodu
+// Array içerisinde yeni bir karakter ekler.
+// birden fazla değer eklemek için, push() methodu kullanılır.
+
+
+var arr = ["data","fs","cyber"];
+var sonuc = arr.push("programming");
+console.log(arr); // ["data", "fs", "cyber", "programming"]
+
+var list = [1,2,3,4,5];
+var sonuc = list.push(6,7,8);
+console.log(list); // 1,2,3,4,5,6,7,8
+
+
+//pop() methodu
+//metin içerisindeki son karakteri siler.
+    
+var arr = ["ilk","söz","olsun"];
+var sonuc = arr.pop();
+console.log(arr); // ["ilk", "söz"]
+console.log(sonuc); // olsun
+
+//shift() methodu
+// Array içerisindeki ilk indeksi siler.
+// silinen indeksin değeri döndürür.
+
+var arr = ["her","hayr","besmele"];
+var sonuc = arr.shift();
+console.log(arr); // ["hayr", "besmele"]
+console.log(sonuc); //  her
+
+//unshift() methodu
+// Array içerisinde başlangıca yeni bir karakter ekler.
+// yeni arrayin uzunluğunu döndürür.(lenght)
+
+var arr = ["her","hayr","besmele"];
+var sonuc = arr.unshift("önce");
+console.log(arr); // ["önce", "her", "hayr", "besmele"]
+console.log(sonuc); // 4
+
+//splice methodu
+// splice yöntemi,bir diziye yeni öğeler eklemek ve bir diziden öğeleri silmek için kullanılır.
+
+var colors=["Red" ,"Yellow", "Green", "Blue"];
+var sonuc = colors.splice(1, 2, "White", "Pink");
+console.log(colors); // Red White Pink // 1.indeksden 2.indeksi arasına eklenen öğeler silinir.
+console.log(sonuc); // Yellow Green // silinen öğeler
+
+var colors=["Red" ,"Yellow", "Green", "Blue"];
+colors.splice(1, 0, "White", "Pink");
+// 1.indeksden başlayarak ekleme yapar.
+// 0,0,White,Pink
+console.log(colors);
+
+//slice  methodu
+// Slice yöntemi, bir dizinin bir parçasını yeni bir diziye dilimler. - Orijinal dizi değiştirilmeyecek.
+
+var colors=["Red" ,"Yellow", "Green", "Blue"];
+var sonuc = colors.slice(1, 3);
+// 1.indeksden 3.indeksi arasındaki öğeler yeni diziye eklenir. 
+// 1.indeksden 3.indeksi arasındaki öğeler silinmez.!!
+// 3.indeksi dahil değildir.!!
+console.log(colors); // Red Yellow Green Blue
+console.log(sonuc); // Yellow Green
+
+// indexOf methodu
+// indexOf() yöntemi, bir dizideki bir öğeyi bulur.
+
+var colors=["Red" ,"Yellow", "Green", "Blue"];
+var sonuc = colors.indexOf("Yellow");
+console.log(sonuc); // 1
+
+var colors2=["Red" ,"Yellow", "Green", "Blue", "Yellow"];
+var sonuc = colors2.indexOf("Yellow", 2); // 2.indeksden başlayarak arama yapar. // 4.indeksde bulunur.
+console.log(sonuc); // 4
+var sonuc2 = colors2.indexOf("purple"); // bulunamazsa -1 döndürür.
+console.log(sonuc2); // -1
+
+// lastIndexOf methodu
+// lastIndexOf() yöntemi, bir dizideki belirtilen öğenin son dizinini döndürür ve öğe bulunamazsa -1 değerini döndürür.
+//Bu yöntemde arama, başlangıç ​​konumundan başlar veya başlangıç ​​konumu belirtilmemişse sondan başlar ve arama dizinin başında sona erer.
+
+var colors=["Red" ,"Yellow", "Green", "Blue", "Yellow"]; 
+var sonuc = colors.lastIndexOf("Yellow");
+console.log(sonuc); // 4
+
+var colors = ["Red" ,"Yellow", "Green", "Blue", "Pink", "Yellow"];
+var sonuc = colors.lastIndexOf("Yellow", 3); 
+console.log(sonuc); // 1
+
+var colors = ["Red" ,"Yellow", "Green", "Blue", "Pink", "Green","Black"];
+var x = colors.lastIndexOf("Green", 1);
+console.log(x); // -1
+
+var colors = ["Red", "Green", "Yellow", "Green" , "Blue", "Green", "Pink", "Green", "Black", "Green"];
+var x = colors.lastIndexOf("Green", 8);  // 
+console.log(x); //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </script>
+</body>
+</html>

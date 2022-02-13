@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METHODLAR-1</title>
+</head>
+<body>
+    <script type="text/javascript" lang="javascript">
+
+
+    // slice methodu
+    // array içinde belirtilen index aralığındaki elemanları döndürür.
+
+    var array = [1,2,3,4,5,6,7,8,9,10];
+    var slicedArray = array.slice(2,5);
+    console.log(slicedArray);
+
+    // index aralığının başlangıç ve bitiş indexlerini belirtir.
+    // index aralığının başlangıç indexi 0'dan başlar.
+    // index aralığının bitiş indexi array içindeki eleman sayısından 1 fazla olmalıdır.
+
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc = metin.slice(0,5); // (0,5) aralığındaki karakterleri alır.
+    document.write(sonuc + "<br/>");
+    
+    var metin2 = "Dünyanın en büyük kültürü";
+    var sonuc2 = metin2.slice(6); // (6, son) aralığındaki karakterleri alır.
+    document.write(sonuc2 + "<br/>"); 
+
+    var metin3 = "Dünyanın en büyük kültürü";
+    var sonuc3 = metin3.slice(11,-6); // (11, -6) aralığındaki karakterleri alır.
+    document.write(sonuc3 + "<br/><br/>"); // herzaman sağa doğru çalışır.
+
+    // substr methodu
+    // string içinde belirtilen index aralığındaki karakterleri döndürür.
+    // orjinal stringin kopyasını döndürür.değiştirmez
+    // 
+
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc = metin.substr(0,5); // (0,5) indexleri arasındaki kısmı alır.
+    document.write(sonuc + "<br/>"); // ikinci parametre kadar ilerler.
+
+    var metin2 = "Dünyanın en büyük kültürü";
+    var sonuc2 = metin2.substr(6); // (6, son) indexleri arasındaki kısmı alır.
+    document.write(sonuc2 + "<br/><br/>");
+
+    // substring methodu
+    //negatif index kullanılmaz.eksi değeri 0 kabul eder.
+    // string içinde belirtilen index aralığındaki karakterleri döndürür.
+    // orjinal stringin kopyasını döndürür.değiştirmez   
+
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc = metin.substring(5,10);  // (5. index değeri ile 10. index değeri arasındaki karakterleri alır.)
+    document.write(sonuc + "<br/>"); // son değer dahil edilmez.
+
+    var sonuc2 = metin.substring(10,5); //değişmiyor yukarıdaki ile aynı sonucu verir.
+    document.write(sonuc2 + "<br/>");
+
+    var sonuc3 = metin.substring(10,-5); //eksi değeri 0 kabuleder, negatif index kullanılmaz.
+    document.write(sonuc3 + "<br/>");
+
+    var sonuc4 = metin.substring(10); // (10, son) indexleri arasındaki karakterleri alır.
+    document.write(sonuc4 + "<br/><br/>");
+
+    // toUpperCase methodu
+    // string içindeki tüm karakterleri büyük harfe çevirir.
+    // orjinal stringin kopyasını döndürür.değiştirmez
+
+    var metin = "dünyanın en büyük kültürü";
+    var sonuc = metin.toUpperCase(); // (metin) değerini büyük harfe çevirir.
+    document.write(sonuc + "<br/>");
+
+    // toLocaleUpperCase methodu
+    // (tr-TR) dilinde kullanılır.
+    //tarayıcı lokasyonunu kontrol eder.(hangi dilde ise o dil yapısına uygun büyük yapar.)
+    /*küçük i harfini büyük I harfine çevirir yani türkçe diye büyük İ yapmaz. Büyük İ olması için
+     nesnenin prototype özelliği değiştirilerek  I olan büyük İ olarak düzenlemek gereklidir.!*/
+
+     var metin = "dünyanın en büyük kültürü";
+    var sonuc = metin.toLocaleUpperCase(); // (metin) değerini büyük harfe çevirir.
+    document.write(sonuc + "<br/>");
+
+    // toLowerCase methodu
+    // (metin) değerini küçük harfe çevirir.
+    // orjinal stringin içeriğini değiştirmez.
+    
+    var metin = "DüNYANıN EN BÜYÜK KÜLTÜRÜ";
+    var sonuc = metin.toLowerCase(); // (büyük harfleri küçük harfe çevirir.)
+    document.write(sonuc + "<br/>");
+
+    // toLocaleLowerCase methodu
+    // (tr-TR) dilinde kullanılır.
+    //tarayıcı lokasyonunu kontrol eder.(hangi dilde ise ona uyumlu olarak çevirir.)
+
+    var metin = "DüNYANıN EN BÜYÜK KÜLTÜRÜ";
+    var sonuc = metin.toLocaleLowerCase(); // (büyük harfleri küçük harfe çevirir.)
+    document.write(sonuc + "<br/>");
+
+    // trim methodu
+    // varilen stringin  her iki tarafındaki boşlukları temizler.
+    // orjinal stringin içeriğini değiştirmez.
+
+
+    var metin = "    Dünyanın en büyük kültürü    ";
+    var sonuc = metin.trim(); // boşlukları siler. (sağ ve solundaki boşlukları siler.)
+    document.write(sonuc + "<br/>");
+    
+
+    // charAt methodu
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc = metin.charAt(0); // 0. index değerindeki karakteri alır.(D çıktısı verir.)
+    document.write(sonuc + "<br/>");
+
+    // charCodeAt methodu
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc = metin.charCodeAt(0); // 0. index değerindeki karakterin kodunu alır.(68 çıktısı verir)
+    document.write(sonuc + "<br/>");
+
+    // indexOf methodu
+    // (metin, index) parametreleriyle çalışır.
+    // index parametresi girilmemişse 0. index değerinden başlar.
+    // index parametresi girilmişse girilen index değerinden başlar.
+    // regex parametresi girilerek çalışma yapamaz bu yönüyle search() methodundan farklıdır.
+
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc1 = metin.indexOf("n"); // n harfi ile başlayan index değerini alır.(2 çıktısı verir.)
+    document.write(sonuc1 + "<br/>");
+    document.write(metin.indexOf("n",8) + "<br/>"); // 8. index değerinden başlayarak n harfi ile başlayan index değerini alır.//10 çıktısı verir.
+
+    var sonuc2 =metin.indexOf("büyük");
+    document.write("büyük kelimesinin index değeri : " + sonuc2 + "<br/>"); // 'büyük' kelimesi ile başlayan index numarasını değerini dönderir.(12 çıktısı verir.)
+
+    var sonuc3 =metin.indexOf("Büyük");
+    document.write("'Büyük' kelimesinin index değeri olmadığından : " + sonuc3 + "<br/>"); // 'Büyük' kelimesi olmadığından index numarasını değerini -1 dönderir.
+
+
+    // lastIndexOf methodu
+    var metin = "büyük Dünyanın en büyük kültürü";
+    var sonuc1 = metin.lastIndexOf("n"); // son eşleşmeyi sağlayan değişken içeriğini döndürür (16 çıktısı verir.)
+    document.write(sonuc1 + "<br/>");
+
+    var sonuc2 = metin.lastIndexOf("büyük"); // son eşleşen kelimeninde indexini verir.(iki tane 'büyük' kelimesi vardır.)
+    document.write(sonuc2 + "<br/>");
+
+    var sonuc3 = metin.lastIndexOf("büyük",10); // 10. index değerine kadar bak denebilir.('büyük' kelimesi başta olduğundan 0 çıktısı verir.)
+    document.write(sonuc3 + "<br/>");
+
+    // search methodu
+    //indexof tan farkı bu metotta regex kullanılır.
+    // ikinci parametre alamaz ama indexOf ile aynı işi yapar.
+    
+    var metin = "Dünyanınbüyük en büyük kültürü";
+    var sonuc = metin.search("n"); // 2 çıktısı verir.
+    document.write(sonuc + "<br/>");
+
+    var sonuc2 =metin.search("büyük"); // 8 çıktısı verir. 
+    document.write(sonuc2 + "<br/>");
+
+    var sonuc3 =metin.search(/BÜYÜK/i); // bu yöntemle case sensitive özelliği kaldırılır. (yine 8 sonucunu verir.)
+    document.write(sonuc3 + "<br/>");
+
+    // match methodu
+    // match methodu ile regex kullanarak metin içerisinde bulunan kelimeleri alır.
+    // gerekli olan regex ifadesi için https://regex101.com/ kullanılabilir.
+    var metin = "Dünyanın KÜLTÜRÜ en büyük kültürü";
+    var sonuc1 = metin.match("kültürü"); // 'kültürü' kelimesini alır. // yoksa null değer döndürür.
+    document.write(sonuc1 + "<br/>");
+
+    var sonuc2 =metin.match(/kültürü/i); // büyük harf küçük harfe bakmadan  ilk eşleşeni dönderir.(ilk KÜLTÜRÜ alır)
+    document.write(sonuc2 + "<br/>");
+
+    var sonuc3 =metin.match(/kültürü/gi); // büyük harf küçük harfe bakarak tüm eşleşenleri dönderir.
+    document.write(sonuc3 + "<br/>");
+
+    var sonuc4 =metin.match(/kültürü/g); // global olarak kullanılır. tamamına bakar ve eşleşenleri dönderir.    
+    document.write(sonuc4 + "<br/><br/><br/>");
+
+    // replace methodu
+    // case sensitive olarak yapılır.
+    // yalnızca ilk eşleşen değeri değiştirir.
+    // replace methodu ile regex kullanarak metin içerisinde bulunan kelimeleri alır.
+    // gerekli olan regex ifadesi için https://regex101.com/ kullanılabilir.
+    // çağrılan stringin değerini değiştirmez.yeni değer döndürür.
+
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc0 = metin.replace("Dünyanın","Merkür'ün"); // Dünyanın yerine Merkür'ün yazdırılır.
+    document.write(sonuc0 + "<br/>");
+
+    var metin = "Dünyanın BÜYÜK en büyük kültürü";
+    var sonuc = metin.replace("b","B");
+    document.write(sonuc + "<br/>"); // 'b' harfi 'B' harfi ile değiştirilir.
+
+    var sonuc2 =metin.replace(/büyük/g,"muhteşem"); // içeriğin tamamı üzerinde çalışmasını sağlar.
+    document.write(sonuc2 + "<br/><br/>");
+
+    var sonuc3 =metin.replace(/büyük/i,"MUHTEŞEM"); // İÇERİĞİN büyük/küçük harf olmasına bakmaz.ilk bulduğunu değiştirir.(insensitive)
+    document.write(sonuc3 + "<br/>");
+
+    var sonuc4 =metin.replace(/büyük/gi,"MUHTEŞEM"); // düzenli ifadelerin her ikisinide(i ve g) içeriğe uygular.
+    document.write(sonuc4 + "<br/><br/>");
+
+   
+    // split methodu
+    // string içeriğini parçalar ve diziye atar.
+    // split methodu ile regex kullanarak metin içerisinde bulunan kelimeleri alır.     
+
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc = metin.split(" ");  // metin içeriğini boşluk karakteri ile ayırır.
+    document.write(typeof sonuc + "<br/>"); // object tipinde döner.
+    document.write(sonuc + "<br/>"); // dizi tipinde döner.
+    document.write(sonuc.length + "<br/>"); // boşluklardan ayırıp dizi yaptığından;dizinin uzunluğunu 4 olarak verir.
+
+    var sonuc2 =metin.split(""); // metin herbir karakterini virgül(,) ile ayırır.
+    document.write(sonuc2 + "<br/>");
+
+    var sonuc3 =metin.split("n"); // metin içeriğinde 'n' karakteri varsa virgül(,) ile ayırır.
+    document.write(sonuc3 + "<br/>");
+
+    var sonuc4 =metin.split("n",2); // metin içeriğinde 'n' karakteri varsa virgül(,) ile ayırır. 2. parametre ile 2. kez 'n' karakteri ayırılır.
+    document.write(sonuc4 + "<br/>");
+
+    var sonuc5 =metin.split();
+    document.write(sonuc5 + "<br/>"); // boşluk karakteri ile ayırılmaz.tüm metin array olur. 
+
+    // concat methodu
+    // metin içeriğini birleştirir.
+    // iki array içerisindeki elemanları birleştirir.
+
+    var dogs = ["Bulldog" , "Beagle" , "Rottweiler"];
+    var cats = ["Ragdoll" , "Sphynx" , "Birman"];
+    var pets = dogs.concat(cats); 
+    document.write(pets, "<br/>"); // ["Bulldog", "Beagle", "Rottweiler", "Ragdoll", "Sphynx", "Birman"]
+
+    var birds = ["Parrot" , "Owl" , "Finch"];
+    var pets2 = dogs.concat(cats, birds); 
+    document.write(pets2, "<br/>"); // ["Bulldog", "Beagle", "Rottweiler", "Ragdoll", "Sphynx", "Birman", "Parrot", "Owl", "Finch"]
+
+    var x = ["John", "James"];  
+    var y = ["Aaron", "Oliver"];
+    var z = ["Scott"]; 
+    var names = x.concat(y).concat(z);
+    document.write(names, "<br/>"); // ["John", "James", "Aaron", "Oliver", "Scott"]
+
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc = metin.concat(" ve çok güzel");  // içeriği ekler.
+    document.write(sonuc + "<br/><br/>");
+    
+    // repeat methodu
+    var metin = "Dünyanın en büyük kültürü";
+    var sonuc = metin.repeat(3);  // 3 kez tekrar eder.
+    document.write(sonuc + "<br/><br/>");
+
+    // toString methodu
+    var deger = 155;
+    var sonuc = deger.toString();  // stringe çevirir.
+    document.write(sonuc + "-" + typeof sonuc + "<br/><br/>");
+
+    // string methodu
+    var deger = Boolean(0);
+    var deger2 = Boolean(1);
+    var deger3 = 8;
+    var deger4 = 8.55;
+    var deger5 = ["tarık", "ceyhan"];
+    var deger6  = "";
+    var deger7 = new Date();
+
+    document.write(deger + "-" + typeof deger + "<br/>");
+    document.write(deger2 + "-" + typeof deger2 + "<br/>");
+    document.write(deger3 + "-" + typeof deger3 + "<br/>");
+    document.write(deger4 + "-" + typeof deger4 + "<br/>");
+    document.write(deger5 + "-" + typeof deger5 + "<br/>");
+    document.write(deger6 + "-" + typeof deger6 + "<br/>");
+    document.write(deger7 + "-" + typeof deger7 + "<br/><br/>");
+    
+    var yeniDeger = String(deger);
+    var yeniDeger2 = String(deger2);    // mutlak olarak stringe çevirir.
+    var yeniDeger3 = String(deger3);
+    var yeniDeger4 = String(deger4);
+    var yeniDeger5 = String(deger5);
+    var yeniDeger6 = String(deger6);
+    var yeniDeger7 = String(deger7);
+
+    document.write(yeniDeger + "-" + typeof yeniDeger + "<br/>");       
+    document.write(yeniDeger2 + "-" + typeof yeniDeger2 + "<br/>");    
+    document.write(yeniDeger4 + "-" + typeof yeniDeger4 + "<br/>"); 
+    document.write(yeniDeger5 + "-" + typeof yeniDeger5 + "<br/>");
+    document.write(yeniDeger6 + "-" + typeof yeniDeger6 + "<br/>");
+    document.write(yeniDeger7 + "-" + typeof yeniDeger7 + "<br/><br/>");
+
+    //eval methodu
+    var sonuc = eval("2+2");
+    document.write(sonuc + "<br/><br/>"); //normalde string olan değerleri toplamak için eval kullanılır.
+
+    //number methodu
+
+    var bir = true;
+    var iki = false;
+    var uc = "9";
+    var dort = "3.45";
+    var bes = new Date();
+    var alti = "";
+    var yedi;
+
+    document.write(bir + "-normalde değeri :" + typeof bir + "<br/>");
+    document.write(iki + "-normalde değer : " + typeof iki + "<br/>")
+    document.write(uc + "-normalde değeri :" + typeof uc + "<br/>");
+    document.write(dort + "-normalde değer : " + typeof dort + "<br/>")
+    document.write(bes + "-normalde değeri :" + typeof bes + "<br/>");
+    document.write(alti + " boş tırnaklar normalde değeri :" + typeof alti + "<br/>");
+    document.write(yedi + "-normalde değeri :" + typeof yedi + "<br/><br/><br/>");
+
+    var yeniBir = Number(bir);
+    var yeniİki = Number(iki);
+    var yeniUc = Number(uc);
+    var yeniDort = Number(dort);
+    var yeniBes = Number(bes);
+    var yeniAlti = Number(alti);
+    var yeniYedi = Number(yedi);
+
+    document.write(yeniBir + "-şimdiki değeri :" + typeof yeniBir + "<br/>");
+    document.write(yeniİki + "-şimdiki değeri :" + typeof yeniİki + "<br/>");
+    document.write(yeniUc + "-şimdiki değeri :" + typeof yeniUc  + "<br/>");
+    document.write(yeniDort + "-şimdiki değeri :" + typeof yeniDort + "<br/>");
+    document.write(yeniBes+ "-şimdiki değeri :" + typeof yeniBes + "<br/>");
+    document.write(yeniAlti+ " boş tırnaklar şimdiki değeri :" + typeof yeniAlti + "<br/>");
+    document.write(yeniYedi+ "-Undefined şimdiki değeri :" + typeof yeniYedi + "<br/><br/>");
+
+    //ValueOf methodu
+    //ilgili değer1  tam anlamıyla yani string,number veya array olan veri türünü içeriği hiç bozmadan aktarma yapar.
+
+    var deger1 = "5";
+    document.write(deger1 + "<br/>" + typeof deger1 + "<br/>");
+    var deger2 = 5;
+    document.write(deger2 + "<br/>" + typeof deger2 + "<br/>");
+
+    var sonuc1 = deger1.valueOf(); 
+    document.write(sonuc1 + "<br/>" + typeof sonuc1 + "<br/>");
+    var sonuc2 = deger2.valueOf();
+    document.write(sonuc2 + "<br/>" + typeof sonuc2 + "<br/>");
+    
+    //includes methodu
+    //string içerisinde aranan değer var mı yok mu kontrol eder.
+    
+    var metin = "tarık ceyhan";
+    var sonuc = metin.includes("rık");
+    document.write(sonuc + "<br/><br/>");  // boolen değer döner.(true,false)
+
+    //startsWith methodu
+    //string içerisinde aranan değerin 'başında' var mı yok mu kontrol eder.
+    var metin = "tarık ceyhan";
+    var sonuc = metin.startsWith("tarık"); //boolen değer döner.(true,false)
+    var sonuc2 = metin.startsWith("tarık",1);  
+    document.write(sonuc2 + "<br/>");
+    
+    //endsWith methodu
+    //string içerisinde aranan değerin 'sonunda' var mı yok mu kontrol eder.
+    var metin = "tarık ceyhan";
+    var sonuc = metin.endsWith("ceyhan");
+    var sonuc2 = metin.endsWith("ceyhan",10); //10. indexten başlayarak kontrol eder.
+    document.write(sonuc + "<br/><br/>"); // boolen değer döner.(true)
+    document.write(sonuc2 + "<br/><br/>"); // boolen değer döner.(false)
+
+    //localeCompare methodu
+    //string içerisinde aranan değerin 'küçükten büyüğe' sıralı olup olmadığını kontrol eder.
+    //Unicode karakter kodlamasına göre sıralama yapar.
+    //uygun olmayan karakterlerin sıralama yapılmasını istemiyorsanız, önce karakterleri Unicode kodlamasına çevirip sonra kontrol edin.   
+
+    var metin = "abc";
+    var metin2 = "abd";
+    var sonuc = metin.localeCompare(metin2);
+    document.write(sonuc + "<br/><br/>"); // -1,0,1 döner.//büyükse 1,küçükse -1,eşitse 0 döner.
+    var sonuc2 = metin2.localeCompare(metin);
+    document.write(sonuc2 + "<br/><br/>"); // 1 değeri döner 
+    var sonuc3 = metin.localeCompare(metin);
+    document.write(sonuc3 + "<br/><br/>"); // 0 değeri döner
+
+    //charAt methodu
+       
+    var metin = "tarık ceyhan";
+    var sonuc = metin.charAt(0);
+    document.write(sonuc + "<br/><br/>"); // t
+    var sonuc2 = metin.charAt(1);
+    document.write(sonuc2 + "<br/><br/>"); // a
+
+    //charCodeAt methodu
+    //karakter kodlarına göre kontrol eder.
+    //unicode numarasını dönderir.
+
+    var metin = "tarık ceyhan";
+    var sonuc = metin.charCodeAt(4);
+    document.write(sonuc + "<br/><br/>"); // k harfinin unicode karşılığı 107 çıktısı verir. 
+    var sonuc2 = metin.charCodeAt(5);
+    document.write(sonuc2 + "<br/><br/>"); // boşluk karakterinin unicode karşılığı 32 çıktısı verir.
+
+    //fromCharCode methodu
+    //unicode kodlarına göre karakterleri oluşturur.
+
+    var sonuc = String.fromCharCode(107);
+    document.write(sonuc + "<br/><br/>"); // 107 unicode koduyla karşılık gelen karakter k alır.
+    var sonuc2 = String.fromCharCode(32);
+    document.write(sonuc2 + "<br/><br/>"); // 32 unicode koduyla karşılık gelen karakter boşluk alır.
+    var sonuc3 = String.fromCharCode(65,66,67);
+    document.write(sonuc3 + "<br/><br/>"); // ABC unicode kodlarıyla karşılık gelen karakterler alır.
+    
+    //encodeURI methodu
+    //string içerisindeki karakterleri URI kodlamasına çevirir.
+    //kodlamaya dahil edilmeyen 0-9,a-z,A-Z,_,.,- karakterlerler.
+
+    var metin = "tarık ceyhan";
+    var sonuc = metin.encodeURI();
+    document.write(sonuc + "<br/><br/>"); // tarık%20ceyhan çıktısı verir.
+    var metin2 = "yum-uşak ğ me_sela";
+    var sonuc2 = metin2.encodeURI();
+    document.write(sonuc2 + "<br/><br/>"); // yum-u%C5%9Fak%20%C3%A7%20me_sela çıktısı verir.
+
+    //decodeURI methodu
+
+    var metin = "tarık%20ceyhan";
+    var sonuc =decodeURI(metin);
+    document.write(sonuc + "<br/><br/>"); // "tarık ceyhan" çıktısı verir.
+    var metin2 = "yum-u%C5%9Fak%20%C3%A7%20me_sela";
+    var sonuc2 = decodeURI(metin2);
+    document.write(sonuc2 + "<br/><br/>"); // "yum-uşak ğ me_sela" çıktısı verir.
+
+
+    
+   
+    
+
+    
+
+
+    
+
+
+
+
+  
+
+
+
+
+
+    </script>
+</body>
+</html>

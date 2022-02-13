@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METHODLAR-2</title>
+  
+</head>
+<body>
+
+    <h1 style="background-color: bisque;">METHODS-2</h1>
+    <script>
+   
+    //charAt methodu
+       
+    var metin = "tarık ceyhan";
+    var sonuc = metin.charAt(0);
+    document.write(sonuc + "<br/>"); // t
+    var sonuc2 = metin.charAt(1);
+    document.write(sonuc2 + "<br/>"); // a
+
+    //charCodeAt methodu
+    //karakter kodlarına göre kontrol eder.
+    //unicode numarasını dönderir.
+
+    var metin = "tarık ceyhan";
+    var sonuc = metin.charCodeAt(4);
+    document.write(sonuc + "<br/>"); // k harfinin unicode karşılığı 107 çıktısı verir. 
+    var sonuc2 = metin.charCodeAt(5);
+    document.write(sonuc2 + "<br/>"); // boşluk karakterinin unicode karşılığı 32 çıktısı verir.
+
+    //fromCharCode methodu
+    //unicode kodlarına göre karakterleri oluşturur.
+
+    var sonuc = String.fromCharCode(107);
+    document.write(sonuc + "<br/>"); // 107 unicode koduyla karşılık gelen karakter k alır.
+    var sonuc2 = String.fromCharCode(32);
+    document.write(sonuc2 + "<br/>"); // 32 unicode koduyla karşılık gelen karakter boşluk alır.
+    var sonuc3 = String.fromCharCode(65,66,67);
+    document.write(sonuc3 + "<br/>"); // ABC unicode kodlarıyla karşılık gelen karakterler alır.
+    
+    //encodeURI methodu
+    //string içerisindeki karakterleri URI kodlamasına çevirir.
+    //kodlamaya dahil edilmeyen 0-9,a-z,A-Z,_,.,- karakterlerler.
+
+    var metin = "www.tarık cey?han.com.tr";
+    var sonuc = encodeURI(metin);
+    document.write(sonuc + "<br/>"); // www.tar%C4%B1k%20cey%3Fhan.com.tr karakterleri utf-8 kodlamasına çevrilir.
+    var metin2 = "yum-uşak ğ me_sela";
+    var sonuc2 = encodeURI(metin2);
+    document.write(sonuc2 + "<br/>"); // yum-u%C5%9Fak%20%C3%A7%20me_sela çıktısı verir.
+
+    //decodeURI methodu
+
+    var metin = "tarık%20ceyhan";
+    var sonuc = decodeURI(metin);
+    document.write(sonuc + "<br/>"); // "tarık ceyhan" çıktısı verir.
+    var metin2 = "yum-u%C5%9Fak%20%C3%A7%20me_sela";
+    var sonuc2 = decodeURI(metin2);
+    document.write(sonuc2 + "<br/>"); // "yum-uşak ğ me_sela" çıktısı verir. 
+
+    //encodeURIComponent methodu
+
+    //kodlamaya dahil edilmeyen 0-9,a-z,A-Z,_,.,- karakterlerler.
+    //encodedURIComponent methodu ile encodeURI methodu arasında farklı bir fonksiyon kullanılır.
+    //daha çok karakter kodlaması yapılırken encodeURIComponent methodu kullanılır.
+    //apilerde kullanılır.
+    //webservislerde kullanılır.
+
+
+    var metin = "https://www.google.com/search?q=hepsiburada&";
+    var sonuc = encodeURIComponent(metin);
+    document.write(sonuc + "<br/>"); // https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dhepsiburada%26 çıktısı verir.
+
+    //decodeURIComponent methodu
+    
+    var metin = "https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dhepsiburada%26";
+    var sonuc = decodeURIComponent(metin);
+    document.write(sonuc + "<br/>"); // https://www.google.com/search?q=hepsiburada& çıktısı verir.
+
+    //escape methodu
+    // değişken içerisindeki metnin özel karakterlerini unicode kodlarına çevirir.
+    //şifreleme işlemi için kullanılabilir.        
+
+    var metin = "tarık,ceyhan'ın köpeği";
+    var sonuc = escape(metin);
+    document.write(sonuc + "<br/>"); // tar%C4%B1k%2Cceyhan%27%C4%B1n%20k%C3%B6pe%C4%9Fi çıktısı verir.//türkçe karakterler unicode kodlarına çevrilir.
+
+    //unescape methodu
+
+    var metin = "tar%C4%B1k%2Cceyhan%27%C4%B1n%20k%C3%B6pe%C4%9Fi";
+    var sonuc = unescape(metin);
+    document.write(sonuc + "<br/>");// tarık,ceyhan'ın köpeği çıktısı verir.
+
+    //splice methodu
+    //metin içerisinde belirli bir kısmını siler.
+    //silinecek kısmın başlangıç ve bitiş konumlarını belirtir.
+    //silinecek kısmının yeni konumuna eklenecek karakterleri belirtir.
+
+ /*    var metin = "tarık ceyhan";
+    var sonuc = metin.splice(2,2,"ç","ü");
+    document.write(sonuc); // tarık cey çü çekilir. */
+    
+    
+
+    //sub() methodu
+
+    var formul = "H2O";
+
+    var bir = "H";
+    var iki = "2";
+    var iki2 = iki.sub();
+    var uc = "O";
+
+    var sonuc = bir + iki2 + uc;
+    document.write(sonuc + "<br>");
+
+    //template string
+    //template stringlerde değişkenleri kullanabilmek için `` kullanılır.
+    //template stringlerde değişkenleri kullanmak için ${} kullanılır.
+    
+    var isim = "tarık";
+    var metin = `<h1>Merhaba ${isim}</h1>`;
+    document.write(metin) // <h1>Merhaba tarık</h1> çıktısı verir.
+    
+    var metin = `bu metin alt 
+    satıra geçince newline (\n) kullanmaya gerek kalmaz.`;
+    console.log(metin); // bu metin alt satıra geçince newline (\n) kullanmaya gerek kalmaz. çıktısı verir.
+
+    //sup() methodu
+
+    var degerbir ="m";
+    var degeriki ="2";
+    var üstkarakter = degeriki.sup();
+    document.write(degerbir + üstkarakter + "<br>");
+
+    //big() methodu
+    //metin içerisindeki karakterleri büyütmeye yarar.büyük harfe değil büyütme!
+    
+    var metin = "tarık";
+    var sonuc = metin.big();
+    document.write(sonuc + "<br>"); 
+
+    //small() methodu
+    //metin içerisindeki karakterleri küçültmeye yarar.küçük harfe değil küçültme!
+
+    var metin = "tarık";
+    var sonuc = metin.small();
+    document.write(sonuc + "<br>");
+
+    //bold() methodu
+    //metin içerisindeki karakterleri kalın yapma.
+
+    var metin = "tarık";
+    var sonuc = metin.bold();
+    document.write(sonuc + "<br>");
+
+    //italics() methodu
+    //metin içerisindeki karakterleri italik yapma.
+
+    var metin = "tarık";
+    var sonuc = metin.italics();
+    document.write(sonuc + "<br>");
+
+    //strike() methodu
+    //metin içerisindeki karakterleri üstü çizgili yapma.
+    // alışveriş sitelerinde fiyat üstü çizmek için kullanılablir.
+
+    var metin = "tarık";
+    var sonuc = metin.strike();
+    document.write(sonuc + "<br>");
+
+    //fixed() methodu
+    // daktilo metni gibi yazdırır.
+
+    var metin = "tarık ceyhan";
+    var sonuc = metin.fixed();
+    document.write(sonuc + "<br>");
+
+    //fontcolor() methodu
+    //metin içerisindeki karakterlerin rengini belirler.
+
+    var metin = "tarık";
+    var sonuc = metin.fontcolor("red"); // metin rengi kırmızı olarak belirlendi.
+    document.write(sonuc + "<br>");
+    var metin = "ceyhan";
+    var sonuc = metin.fontcolor("#ff0000"); //hex kodu verilerek metin rengi kırmızı olarak belirlendi.
+    document.write(sonuc + "<br>");
+
+    //fontsize() methodu
+    //metin içerisindeki karakterlerin boyutunu belirler.
+    
+    var metin = "tarık";
+    var sonuc = metin.fontsize(20); // metin boyutu 20 olarak belirlendi.
+    document.write(sonuc + "<br>");
+    var sonuc2 = metin.fontsize(30); // metin boyutu 30 olarak belirlendi.
+    document.write(sonuc2 + "<br>");
+    var sonuc3 = metin.fontsize(7); // metin boyutu 40 olarak belirlendi.
+    document.write(sonuc3 + "<br>"); // bu metotile "en fazla" "7" boyutta metin yazılabilir.
+    // yukarıdakileri 7 den bir farkı olmadığını  göstermek için yazıldı.
+    
+    //anchor() methodu
+
+    var metin = "tarık";
+    var sonuc = metin.anchor("isim"); // a tagının name değeri isim olarak yazılmış oldu.
+    document.write(sonuc + "<br>"); // html tag lerının ekrana çıktısı yoktur alert ile gösterebiliriz.
+    alert(sonuc); // tarık'ın bağlantısı verilir.
+
+    //link() methodu
+    
+    var metin = "google.com";
+    var sonuc = metin.link("https://www.linkedin.com/in/tarikceyhan/"); // a tagının href değeri linkedin linkimi ekledim :)
+    document.write(sonuc + "<br>"); 
+    alert(sonuc); // html tag lerının ekrana çıktısı yoktur alert ile gösterebiliriz.
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+ 
+
+
+   
+
+
+
+
+
+    
+   
+    
+
+    
+
+
+    
+
+
+
+
+  
+
+
+
+
+
+    </script>
+</body>
+</html>
